@@ -1,9 +1,12 @@
 package model.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Seller {
+public class Seller implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private Integer id;
     private String name;
     private String email;
@@ -74,11 +77,23 @@ public class Seller {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Seller seller = (Seller) o;
-        return Objects.equals(id, seller.id) && Objects.equals(name, seller.name) && Objects.equals(email, seller.email) && Objects.equals(birthDate, seller.birthDate) && Objects.equals(baseSalary, seller.baseSalary) && Objects.equals(department, seller.department);
+        return Objects.equals(id, seller.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, email, birthDate, baseSalary, department);
+        return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Seller{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", birthDate=" + birthDate +
+                ", baseSalary=" + baseSalary +
+                ", department=" + department +
+                '}';
     }
 }
