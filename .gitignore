@@ -4,6 +4,9 @@ out/
 !**/src/test/**/out/
 .kotlin
 
+# Configurações do Banco de Dados
+db.properties
+
 ### Eclipse ###
 .apt_generated
 .classpath
